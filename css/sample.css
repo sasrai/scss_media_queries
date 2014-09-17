@@ -106,24 +106,27 @@ input, select {
 /* ************************************
  *
  * SCSS Media Queries Mixins
- * 
- * Aauthor   : Ryuichi Nonaka
- * Version   : 0.4.0
+ *
+ * Author    : Ryuichi Nonaka
+ * Version   : 0.4.1
  * Copyright : 2012 Ryuichi Nonaka
  * Date      : 2012/11/16
+ *
+ * ModifiedBy   : sasrai
+ * ModifiedDate : 2014/9/17
  *
  * Released under the MIT license
  *
  *********************************** */
 /* ************************************
  *
- * Device Width 
+ * Device Width
  * Initialize variables
  *
  *********************************** */
 /* ************************************
  *
- * Browser Prefix 
+ * Browser Prefix
  * Initialize variables
  *
  *********************************** */
@@ -142,10 +145,13 @@ input, select {
  * @param $version [old|modern|future|any] The version of a device
  * @param $add_orientation boolean [true|false] add orientation attribute
  *
- * old    : iPhone 3G or 3GS.
- * modern : iPhone 4 or 4S.
- * future : iPhone 5.
- * any    : All version.
+ * old         : iPhone 3G or 3GS.
+ * modern      : iPhone 4 or 4S.
+ * future      : iPhone 5.
+ * iphone5     : iPhone 5.
+ * iphone6     : iPhone 6.
+ * iphone6plus : iPhone 6Plus.
+ * any         : All version.
  *
  *********************************** */
 /* ************************************
@@ -305,7 +311,7 @@ html {
     content: 'mobile landscape old';
   }
 }
-@media only screen and (min-width: 481px) and (max-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-width: 481px) and (max-width: 320px) and (-webkit-min-device-pixel-ratio: 1.5) {
   /* line 17, ../scss/sample.scss */
   html {
     background: #222;
@@ -313,10 +319,10 @@ html {
   /* line 50, ../scss/sample.scss */
   html:after {
     color: #fff;
-    content: 'mobile portrait iphone5';
+    content: 'mobile portrait future';
   }
 }
-@media only screen and (min-width: 481px) and (max-width: 320px) and (-moz-min-device-pixel-ratio: 2) {
+@media only screen and (min-width: 481px) and (max-width: 320px) and (-moz-min-device-pixel-ratio: 1.5) {
   /* line 17, ../scss/sample.scss */
   html {
     background: #222;
@@ -324,10 +330,10 @@ html {
   /* line 50, ../scss/sample.scss */
   html:after {
     color: #fff;
-    content: 'mobile portrait iphone5';
+    content: 'mobile portrait future';
   }
 }
-@media only screen and (min-width: 481px) and (max-width: 320px) and (-o-min-device-pixel-ratio: 4 / 2) {
+@media only screen and (min-width: 481px) and (max-width: 320px) and (-o-min-device-pixel-ratio: 3 / 2) {
   /* line 17, ../scss/sample.scss */
   html {
     background: #222;
@@ -335,10 +341,10 @@ html {
   /* line 50, ../scss/sample.scss */
   html:after {
     color: #fff;
-    content: 'mobile portrait iphone5';
+    content: 'mobile portrait future';
   }
 }
-@media only screen and (min-width: 481px) and (max-width: 320px) and (-ms-min-device-pixel-ratio: 2) {
+@media only screen and (min-width: 481px) and (max-width: 320px) and (-ms-min-device-pixel-ratio: 1.5) {
   /* line 17, ../scss/sample.scss */
   html {
     background: #222;
@@ -346,10 +352,10 @@ html {
   /* line 50, ../scss/sample.scss */
   html:after {
     color: #fff;
-    content: 'mobile portrait iphone5';
+    content: 'mobile portrait future';
   }
 }
-@media only screen and (min-width: 481px) and (max-width: 320px) and (min-device-pixel-ratio: 2) {
+@media only screen and (min-width: 481px) and (max-width: 320px) and (min-device-pixel-ratio: 1.5) {
   /* line 17, ../scss/sample.scss */
   html {
     background: #222;
@@ -357,117 +363,62 @@ html {
   /* line 50, ../scss/sample.scss */
   html:after {
     color: #fff;
-    content: 'mobile portrait iphone5';
+    content: 'mobile portrait future';
   }
 }
-@media only screen and (min-width: 569px) and (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-width: 321px) and (max-width: 568px) and (-webkit-min-device-pixel-ratio: 1.5) {
   /* line 17, ../scss/sample.scss */
   html {
-    background: #222;
+    background: #444;
   }
   /* line 59, ../scss/sample.scss */
   html:after {
     color: #fff;
-    content: 'mobile portrait iphone6';
+    content: 'mobile landscape future';
   }
 }
-@media only screen and (min-width: 569px) and (max-width: 375px) and (-moz-min-device-pixel-ratio: 2) {
+@media only screen and (min-width: 321px) and (max-width: 568px) and (-moz-min-device-pixel-ratio: 1.5) {
   /* line 17, ../scss/sample.scss */
   html {
-    background: #222;
+    background: #444;
   }
   /* line 59, ../scss/sample.scss */
   html:after {
     color: #fff;
-    content: 'mobile portrait iphone6';
+    content: 'mobile landscape future';
   }
 }
-@media only screen and (min-width: 569px) and (max-width: 375px) and (-o-min-device-pixel-ratio: 4 / 2) {
+@media only screen and (min-width: 321px) and (max-width: 568px) and (-o-min-device-pixel-ratio: 3 / 2) {
   /* line 17, ../scss/sample.scss */
   html {
-    background: #222;
+    background: #444;
   }
   /* line 59, ../scss/sample.scss */
   html:after {
     color: #fff;
-    content: 'mobile portrait iphone6';
+    content: 'mobile landscape future';
   }
 }
-@media only screen and (min-width: 569px) and (max-width: 375px) and (-ms-min-device-pixel-ratio: 2) {
+@media only screen and (min-width: 321px) and (max-width: 568px) and (-ms-min-device-pixel-ratio: 1.5) {
   /* line 17, ../scss/sample.scss */
   html {
-    background: #222;
+    background: #444;
   }
   /* line 59, ../scss/sample.scss */
   html:after {
     color: #fff;
-    content: 'mobile portrait iphone6';
+    content: 'mobile landscape future';
   }
 }
-@media only screen and (min-width: 569px) and (max-width: 375px) and (min-device-pixel-ratio: 2) {
+@media only screen and (min-width: 321px) and (max-width: 568px) and (min-device-pixel-ratio: 1.5) {
   /* line 17, ../scss/sample.scss */
   html {
-    background: #222;
+    background: #444;
   }
   /* line 59, ../scss/sample.scss */
   html:after {
     color: #fff;
-    content: 'mobile portrait iphone6';
-  }
-}
-@media only screen and (min-width: 668px) and (max-width: 414px) and (-webkit-min-device-pixel-ratio: 3) {
-  /* line 17, ../scss/sample.scss */
-  html {
-    background: #222;
-  }
-  /* line 68, ../scss/sample.scss */
-  html:after {
-    color: #fff;
-    content: 'mobile portrait iphone6plus';
-  }
-}
-@media only screen and (min-width: 668px) and (max-width: 414px) and (-moz-min-device-pixel-ratio: 3) {
-  /* line 17, ../scss/sample.scss */
-  html {
-    background: #222;
-  }
-  /* line 68, ../scss/sample.scss */
-  html:after {
-    color: #fff;
-    content: 'mobile portrait iphone6plus';
-  }
-}
-@media only screen and (min-width: 668px) and (max-width: 414px) and (-o-min-device-pixel-ratio: 6 / 2) {
-  /* line 17, ../scss/sample.scss */
-  html {
-    background: #222;
-  }
-  /* line 68, ../scss/sample.scss */
-  html:after {
-    color: #fff;
-    content: 'mobile portrait iphone6plus';
-  }
-}
-@media only screen and (min-width: 668px) and (max-width: 414px) and (-ms-min-device-pixel-ratio: 3) {
-  /* line 17, ../scss/sample.scss */
-  html {
-    background: #222;
-  }
-  /* line 68, ../scss/sample.scss */
-  html:after {
-    color: #fff;
-    content: 'mobile portrait iphone6plus';
-  }
-}
-@media only screen and (min-width: 668px) and (max-width: 414px) and (min-device-pixel-ratio: 3) {
-  /* line 17, ../scss/sample.scss */
-  html {
-    background: #222;
-  }
-  /* line 68, ../scss/sample.scss */
-  html:after {
-    color: #fff;
-    content: 'mobile portrait iphone6plus';
+    content: 'mobile landscape future';
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) and (-webkit-max-device-pixel-ratio: 1) {
@@ -475,7 +426,7 @@ html {
   html {
     background: #666;
   }
-  /* line 77, ../scss/sample.scss */
+  /* line 68, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet portrait old';
@@ -486,7 +437,7 @@ html {
   html {
     background: #666;
   }
-  /* line 77, ../scss/sample.scss */
+  /* line 68, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet portrait old';
@@ -497,7 +448,7 @@ html {
   html {
     background: #666;
   }
-  /* line 77, ../scss/sample.scss */
+  /* line 68, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet portrait old';
@@ -508,7 +459,7 @@ html {
   html {
     background: #666;
   }
-  /* line 77, ../scss/sample.scss */
+  /* line 68, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet portrait old';
@@ -519,7 +470,7 @@ html {
   html {
     background: #666;
   }
-  /* line 77, ../scss/sample.scss */
+  /* line 68, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet portrait old';
@@ -530,7 +481,7 @@ html {
   html {
     background: #888;
   }
-  /* line 86, ../scss/sample.scss */
+  /* line 77, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape old';
@@ -541,7 +492,7 @@ html {
   html {
     background: #888;
   }
-  /* line 86, ../scss/sample.scss */
+  /* line 77, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape old';
@@ -552,7 +503,7 @@ html {
   html {
     background: #888;
   }
-  /* line 86, ../scss/sample.scss */
+  /* line 77, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape old';
@@ -563,7 +514,7 @@ html {
   html {
     background: #888;
   }
-  /* line 86, ../scss/sample.scss */
+  /* line 77, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape old';
@@ -574,7 +525,7 @@ html {
   html {
     background: #888;
   }
-  /* line 86, ../scss/sample.scss */
+  /* line 77, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape old';
@@ -585,7 +536,7 @@ html {
   html {
     background: #777;
   }
-  /* line 95, ../scss/sample.scss */
+  /* line 86, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape modern';
@@ -596,7 +547,7 @@ html {
   html {
     background: #777;
   }
-  /* line 95, ../scss/sample.scss */
+  /* line 86, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape modern';
@@ -607,7 +558,7 @@ html {
   html {
     background: #777;
   }
-  /* line 95, ../scss/sample.scss */
+  /* line 86, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape modern';
@@ -618,7 +569,7 @@ html {
   html {
     background: #777;
   }
-  /* line 95, ../scss/sample.scss */
+  /* line 86, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape modern';
@@ -629,7 +580,7 @@ html {
   html {
     background: #777;
   }
-  /* line 95, ../scss/sample.scss */
+  /* line 86, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape modern';
@@ -640,7 +591,7 @@ html {
   html {
     background: #666;
   }
-  /* line 104, ../scss/sample.scss */
+  /* line 95, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape modern';
@@ -651,7 +602,7 @@ html {
   html {
     background: #666;
   }
-  /* line 104, ../scss/sample.scss */
+  /* line 95, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape modern';
@@ -662,7 +613,7 @@ html {
   html {
     background: #666;
   }
-  /* line 104, ../scss/sample.scss */
+  /* line 95, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape modern';
@@ -673,7 +624,7 @@ html {
   html {
     background: #666;
   }
-  /* line 104, ../scss/sample.scss */
+  /* line 95, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape modern';
@@ -684,7 +635,7 @@ html {
   html {
     background: #666;
   }
-  /* line 104, ../scss/sample.scss */
+  /* line 95, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'tablet landscape modern';
@@ -695,7 +646,7 @@ html {
   html {
     background: #aaa;
   }
-  /* line 113, ../scss/sample.scss */
+  /* line 104, ../scss/sample.scss */
   html:after {
     content: 'desctop modern';
   }
@@ -705,7 +656,7 @@ html {
   html {
     background: #ccc;
   }
-  /* line 121, ../scss/sample.scss */
+  /* line 112, ../scss/sample.scss */
   html:after {
     content: 'desctop wide';
   }
@@ -715,7 +666,7 @@ html {
   html {
     background: #eee;
   }
-  /* line 129, ../scss/sample.scss */
+  /* line 120, ../scss/sample.scss */
   html:after {
     content: 'desctop hd';
   }
@@ -725,7 +676,7 @@ html {
   html {
     background: #cc0000;
   }
-  /* line 137, ../scss/sample.scss */
+  /* line 128, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'desctop over';
@@ -736,7 +687,7 @@ html {
   html {
     background: #00cc00;
   }
-  /* line 146, ../scss/sample.scss */
+  /* line 137, ../scss/sample.scss */
   html:after {
     color: #fff;
     content: 'custom';

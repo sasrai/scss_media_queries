@@ -33,17 +33,30 @@ $MQ_FUTURE_MOBILE_PORTRAIT      :   320px !default; // new iPhone 5.
 $MQ_FUTURE_MOBILE_LANDSCAPE     :   568px !default; // new iPhone 5.
 $MQ_FUTURE_MOBILE_PXRATIO       :     1.5 !default; // iOS: 2.0
 
+$MQ_IPHONE3GS_MOBILE_PORTRAIT     :   320px !default; // iPhone 3GS.
+$MQ_IPHONE3GS_MOBILE_LANDSCAPE    :   480px !default; // iPhone 3GS.
+$MQ_IPHONE3GS_MOBILE_DEVICE_WIDTH :   320px !default; // iPhone 3GS.
+$MQ_IPHONE3GS_MOBILE_PXRATIO      :     1.0 !default; // iOS: 1.0
+
+$MQ_IPHONE4_MOBILE_PORTRAIT     :   320px !default; // iPhone(4,4s).
+$MQ_IPHONE4_MOBILE_LANDSCAPE    :   480px !default; // iPhone(4,4s).
+$MQ_IPHONE4_MOBILE_DEVICE_WIDTH :   320px !default; // iPhone(4,4s).
+$MQ_IPHONE4_MOBILE_PXRATIO      :     2.0 !default; // iOS: 2.0
+
 $MQ_IPHONE5_MOBILE_PORTRAIT     :   320px !default; // iPhone(5,5c,5s).
 $MQ_IPHONE5_MOBILE_LANDSCAPE    :   568px !default; // iPhone(5,5c,5s).
+$MQ_IPHONE5_MOBILE_DEVICE_WIDTH :   320px !default; // iPhone(5,5c,5s).
 $MQ_IPHONE5_MOBILE_PXRATIO      :     2.0 !default; // iOS: 2.0
 
 $MQ_IPHONE6_MOBILE_PORTRAIT     :   375px !default; // iPhone(6).
 $MQ_IPHONE6_MOBILE_LANDSCAPE    :   667px !default; // iPhone(6).
+$MQ_IPHONE6_MOBILE_DEVICE_WIDTH :   375px !default; // iPhone(5,5c,5s).
 $MQ_IPHONE6_MOBILE_PXRATIO      :     2.0 !default; // iOS: 2.0
 
-$MQ_IPHONE6PLUS_MOBILE_PORTRAIT  :   414px !default; // iPhone(6Plus).
-$MQ_IPHONE6PLUS_MOBILE_LANDSCAPE :   736px !default; // iPhone(6Plus).
-$MQ_IPHONE6PLUS_MOBILE_PXRATIO   :     3.0 !default; // iOS: 3.0
+$MQ_IPHONE6PLUS_MOBILE_PORTRAIT     :   414px !default; // iPhone(6Plus).
+$MQ_IPHONE6PLUS_MOBILE_LANDSCAPE    :   736px !default; // iPhone(6Plus).
+$MQ_IPHONE6PLUS_MOBILE_DEVICE_WIDTH :   414px !default; // iPhone(5,5c,5s).
+$MQ_IPHONE6PLUS_MOBILE_PXRATIO      :     3.0 !default; // iOS: 3.0
 
 //Tablet device sizes
 $MQ_OLD_TABLET_PORTRAIT         :   768px !default; // 1 or 2 or mini.
@@ -239,8 +252,8 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
       @if $orientation == portrait {
         @if $add_orientation {
           @media only screen
-          and ( min-width: $MQ_OLD_MOBILE_LANDSCAPE + 1 )
-          and ( max-width: $MQ_IPHONE5_MOBILE_PORTRAIT )
+          and ( device-width: $MQ_IPHONE5_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE5_MOBILE_LANDSCAPE )
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE5_MOBILE_PXRATIO ) )
           and ( orientation: $orientation )
           {
@@ -248,8 +261,8 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
           }
         } @else {
           @media only screen
-          and ( min-width: $MQ_OLD_MOBILE_LANDSCAPE + 1 )
-          and ( max-width: $MQ_IPHONE5_MOBILE_PORTRAIT )
+          and ( device-width: $MQ_IPHONE5_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE5_MOBILE_LANDSCAPE )
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE5_MOBILE_PXRATIO ) )
           {
             @content;
@@ -258,8 +271,9 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
       } @else if $orientation == landscape {
         @if $add_orientation {
           @media only screen
-          and ( min-width: $MQ_IPHONE5_MOBILE_PORTRAIT + 1 )
-          and ( max-width: $MQ_IPHONE5_MOBILE_LANDSCAPE )
+          and ( device-width: $MQ_IPHONE5_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE5_MOBILE_LANDSCAPE )
+          and ( min-width: $MQ_IPHONE5_MOBILE_PORTRAIT + 1)
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE5_MOBILE_PXRATIO ) )
           and ( orientation: $orientation )
           {
@@ -267,7 +281,9 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
           }
         } @else {
           @media only screen
-          and ( min-width: $MQ_IPHONE5_MOBILE_PORTRAIT + 1 )
+          and ( device-width: $MQ_IPHONE5_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE5_MOBILE_LANDSCAPE )
+          and ( min-width: $MQ_IPHONE5_MOBILE_PORTRAIT + 1)
           and ( max-width: $MQ_IPHONE5_MOBILE_LANDSCAPE )
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE5_MOBILE_PXRATIO ) )
           {
@@ -279,8 +295,8 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
       @if $orientation == portrait {
         @if $add_orientation {
           @media only screen
-          and ( min-width: $MQ_IPHONE5_MOBILE_LANDSCAPE + 1 )
-          and ( max-width: $MQ_IPHONE6_MOBILE_PORTRAIT )
+          and ( device-width: $MQ_IPHONE6_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE6_MOBILE_LANDSCAPE )
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE6_MOBILE_PXRATIO ) )
           and ( orientation: $orientation )
           {
@@ -288,8 +304,8 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
           }
         } @else {
           @media only screen
-          and ( min-width: $MQ_IPHONE5_MOBILE_LANDSCAPE + 1 )
-          and ( max-width: $MQ_IPHONE6_MOBILE_PORTRAIT )
+          and ( device-width: $MQ_IPHONE6_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE6_MOBILE_LANDSCAPE )
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE6_MOBILE_PXRATIO ) )
           {
             @content;
@@ -298,8 +314,9 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
       } @else if $orientation == landscape {
         @if $add_orientation {
           @media only screen
-          and ( min-width: $MQ_IPHONE6_MOBILE_PORTRAIT + 1 )
-          and ( max-width: $MQ_IPHONE6_MOBILE_LANDSCAPE )
+          and ( device-width: $MQ_IPHONE6_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE6_MOBILE_LANDSCAPE )
+          and ( min-width: $MQ_IPHONE6_MOBILE_PORTRAIT + 1)
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE6_MOBILE_PXRATIO ) )
           and ( orientation: $orientation )
           {
@@ -307,7 +324,9 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
           }
         } @else {
           @media only screen
-          and ( min-width: $MQ_IPHONE6_MOBILE_PORTRAIT + 1 )
+          and ( device-width: $MQ_IPHONE6_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE6_MOBILE_LANDSCAPE )
+          and ( min-width: $MQ_IPHONE6_MOBILE_PORTRAIT + 1)
           and ( max-width: $MQ_IPHONE6_MOBILE_LANDSCAPE )
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE6_MOBILE_PXRATIO ) )
           {
@@ -319,8 +338,8 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
       @if $orientation == portrait {
         @if $add_orientation {
           @media only screen
-          and ( min-width: $MQ_IPHONE6_MOBILE_LANDSCAPE + 1 )
-          and ( max-width: $MQ_IPHONE6PLUS_MOBILE_PORTRAIT )
+          and ( device-width: $MQ_IPHONE6PLUS_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE6PLUS_MOBILE_LANDSCAPE )
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE6PLUS_MOBILE_PXRATIO ) )
           and ( orientation: $orientation )
           {
@@ -328,8 +347,8 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
           }
         } @else {
           @media only screen
-          and ( min-width: $MQ_IPHONE6_MOBILE_LANDSCAPE + 1 )
-          and ( max-width: $MQ_IPHONE6PLUS_MOBILE_PORTRAIT )
+          and ( device-width: $MQ_IPHONE6PLUS_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE6PLUS_MOBILE_LANDSCAPE )
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE6PLUS_MOBILE_PXRATIO ) )
           {
             @content;
@@ -338,8 +357,9 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
       } @else if $orientation == landscape {
         @if $add_orientation {
           @media only screen
-          and ( min-width: $MQ_IPHONE6PLUS_MOBILE_PORTRAIT + 1 )
-          and ( max-width: $MQ_IPHONE6PLUS_MOBILE_LANDSCAPE )
+          and ( device-width: $MQ_IPHONE6PLUS_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE6PLUS_MOBILE_LANDSCAPE )
+          and ( min-width: $MQ_IPHONE6PLUS_MOBILE_PORTRAIT + 1)
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE6PLUS_MOBILE_PXRATIO ) )
           and ( orientation: $orientation )
           {
@@ -347,7 +367,9 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
           }
         } @else {
           @media only screen
-          and ( min-width: $MQ_IPHONE6PLUS_MOBILE_PORTRAIT + 1 )
+          and ( device-width: $MQ_IPHONE6PLUS_MOBILE_PORTRAIT )
+          and ( device-height: $MQ_IPHONE6PLUS_MOBILE_LANDSCAPE )
+          and ( min-width: $MQ_IPHONE6PLUS_MOBILE_PORTRAIT + 1)
           and ( max-width: $MQ_IPHONE6PLUS_MOBILE_LANDSCAPE )
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE6PLUS_MOBILE_PXRATIO ) )
           {
