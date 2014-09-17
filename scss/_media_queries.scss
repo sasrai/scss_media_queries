@@ -1,11 +1,14 @@
 /* ************************************
  *
  * SCSS Media Queries Mixins
- * 
- * Aauthor   : Ryuichi Nonaka
- * Version   : 0.4.0
+ *
+ * Author    : Ryuichi Nonaka
+ * Version   : 0.4.1
  * Copyright : 2012 Ryuichi Nonaka
  * Date      : 2012/11/16
+ *
+ * ModifiedBy   : sasrai
+ * ModifiedDate : 2014/9/17
  *
  * Released under the MIT license
  *
@@ -13,7 +16,7 @@
 
 /* ************************************
  *
- * Device Width 
+ * Device Width
  * Initialize variables
  *
  *********************************** */
@@ -65,7 +68,7 @@ $MQ_FUTURE_DESCTOP_PXRATIO      :     1.5 !default; // MacOS: 2.0
 
 /* ************************************
  *
- * Browser Prefix 
+ * Browser Prefix
  * Initialize variables
  *
  *********************************** */
@@ -98,10 +101,13 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
  * @param $version [old|modern|future|any] The version of a device
  * @param $add_orientation boolean [true|false] add orientation attribute
  *
- * old    : iPhone 3G or 3GS.
- * modern : iPhone 4 or 4S.
- * future : iPhone 5.
- * any    : All version.
+ * old         : iPhone 3G or 3GS.
+ * modern      : iPhone 4 or 4S.
+ * future      : iPhone 5.
+ * iphone5     : iPhone 5.
+ * iphone6     : iPhone 6.
+ * iphone6plus : iPhone 6Plus.
+ * any         : All version.
  *
  *********************************** */
 
@@ -111,7 +117,7 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
     @if $version == old {
       @if $orientation == portrait {
         @if $add_orientation {
-          @media only screen 
+          @media only screen
           and ( min-width: 0 )
           and ( max-width: $MQ_OLD_MOBILE_PORTRAIT )
           and ( #{$prefix}max-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_OLD_MOBILE_PXRATIO ) )
@@ -120,7 +126,7 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
             @content;
           }
         } @else {
-          @media only screen 
+          @media only screen
           and ( min-width: 0 )
           and ( max-width: $MQ_OLD_MOBILE_PORTRAIT )
           and ( #{$prefix}max-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_OLD_MOBILE_PXRATIO ) )
@@ -226,7 +232,7 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_FUTURE_MOBILE_PXRATIO ) )
           {
             @content;
-          } 
+          }
         }
       }
     } @else if $version == iphone5 {
@@ -266,7 +272,7 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE5_MOBILE_PXRATIO ) )
           {
             @content;
-          } 
+          }
         }
       }
     } @else if $version == iphone6 {
@@ -306,7 +312,7 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE6_MOBILE_PXRATIO ) )
           {
             @content;
-          } 
+          }
         }
       }
     } @else if $version == iphone6plus {
@@ -346,13 +352,13 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
           and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_IPHONE6PLUS_MOBILE_PXRATIO ) )
           {
             @content;
-          } 
+          }
         }
       }
     } @else if $version == any {
       @if $orientation == portrait {
         @if $add_orientation {
-          @media only screen 
+          @media only screen
           and ( min-width: 0 )
           and ( max-width: $MQ_OLD_MOBILE_PORTRAIT )
           and ( #{$prefix}max-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_OLD_MOBILE_PXRATIO ) )
@@ -379,7 +385,7 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
             @content;
           }
         } @else {
-          @media only screen 
+          @media only screen
           and ( min-width: 0 )
           and ( max-width: $MQ_OLD_MOBILE_PORTRAIT )
           and ( #{$prefix}max-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_OLD_MOBILE_PXRATIO ) )
@@ -478,7 +484,7 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
     @if $version == old {
       @if $orientation == portrait {
         @if $add_orientation {
-          @media only screen 
+          @media only screen
           and ( min-width: $MQ_OLD_MOBILE_LANDSCAPE + 1 )
           and ( max-width: $MQ_OLD_TABLET_PORTRAIT )
           and ( #{$prefix}max-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_OLD_TABLET_PXRATIO ) )
@@ -487,7 +493,7 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
             @content;
           }
         } @else {
-          @media only screen 
+          @media only screen
           and ( min-width: $MQ_OLD_MOBILE_LANDSCAPE + 1 )
           and ( max-width: $MQ_OLD_TABLET_PORTRAIT )
           and ( #{$prefix}max-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_OLD_TABLET_PXRATIO ) )
@@ -558,7 +564,7 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
     } @else if $version == any {
       @if $orientation == portrait {
         @if $add_orientation {
-          @media only screen 
+          @media only screen
           and ( min-width: $MQ_OLD_MOBILE_LANDSCAPE + 1 )
           and ( max-width: $MQ_OLD_TABLET_PORTRAIT )
           and ( #{$prefix}max-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_OLD_TABLET_PXRATIO ) )
@@ -575,7 +581,7 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
             @content;
           }
         } @else {
-          @media only screen 
+          @media only screen
           and ( min-width: $MQ_OLD_MOBILE_LANDSCAPE + 1 )
           and ( max-width: $MQ_OLD_TABLET_PORTRAIT )
           and ( #{$prefix}max-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_OLD_TABLET_PXRATIO ) )
