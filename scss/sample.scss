@@ -44,6 +44,33 @@ html
                         content         : 'mobile landscape old';
                 }
         }
+        @include mq-mobile('portrait', 'iphone5') {
+                background      : #222;
+
+                &:after
+                {
+                        color           : #fff;
+                        content         : 'mobile portrait iphone5';
+                }
+        }
+        @include mq-mobile('portrait', 'iphone6') {
+                background      : #222;
+
+                &:after
+                {
+                        color           : #fff;
+                        content         : 'mobile portrait iphone6';
+                }
+        }
+        @include mq-mobile('portrait', 'iphone6plus') {
+                background      : #222;
+
+                &:after
+                {
+                        color           : #fff;
+                        content         : 'mobile portrait iphone6plus';
+                }
+        }
         @include mq-tablet('portrait', 'old') {
                 background      : #666;
 
